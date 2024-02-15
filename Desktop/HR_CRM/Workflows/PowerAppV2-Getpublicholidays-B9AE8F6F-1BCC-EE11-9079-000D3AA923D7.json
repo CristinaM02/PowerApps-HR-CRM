@@ -1,0 +1,127 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_bank-20holidays-5fc1714cb571d0614d-5f970be5e189ae4d16": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "crm_sharedbank20holidays5fc1714cb571d0614d5f970be5e189ae4d16_e0a26"
+        },
+        "api": {
+          "name": "shared_bank-20holidays-5fc1714cb571d0614d-5f970be5e189ae4d16",
+          "logicalName": "crm_bank-20holidays"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "undefined",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Get_public_holidays": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "year": 2024,
+              "countryCode": "RO"
+            },
+            "host": {
+              "apiId": "",
+              "connectionName": "shared_bank-20holidays-5fc1714cb571d0614d-5f970be5e189ae4d16",
+              "operationId": "PublicHolidaysV3"
+            },
+            "authentication": {
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']",
+              "type": "Raw"
+            }
+          }
+        },
+        "Respond_to_a_PowerApp_or_flow": {
+          "runAfter": {
+            "For_each": [
+              "Succeeded"
+            ]
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offdays": {
+                  "title": "OffDays",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "offdays": "@substring(\r\nvariables('Response'), \r\n0, \r\nsub(length(variables('Response')),1)\r\n)"
+            }
+          }
+        },
+        "Initialize_variable": {
+          "runAfter": {},
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Response",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "For_each": {
+          "foreach": "@outputs('Get_public_holidays')?['body']",
+          "actions": {
+            "Append_to_string_variable": {
+              "type": "AppendToStringVariable",
+              "inputs": {
+                "name": "Response",
+                "value": "@{items('For_each')?['date']};"
+              }
+            }
+          },
+          "runAfter": {
+            "Get_public_holidays": [
+              "Succeeded"
+            ]
+          },
+          "type": "Foreach"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "c20373b3-494d-4585-b389-cae8468beb38",
+    "Name": "PowerAppV2->Getpublicholidays",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "b9ae8f6f-1bcc-ee11-9079-000d3aa923d7"
+  }
+]

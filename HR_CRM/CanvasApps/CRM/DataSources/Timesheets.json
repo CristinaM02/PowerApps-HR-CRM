@@ -1,0 +1,109 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crm_timesheetses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crm_timesheets",
+    "MaxGetRowsCount": 500,
+    "Name": "Timesheets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crm_fri": "Fri",
+      "crm_mon": "Mon",
+      "crm_name": "ID",
+      "crm_Project": "Project",
+      "crm_sat": "Sat",
+      "crm_sun": "Sun",
+      "crm_thu": "Thu",
+      "crm_timesheets_AsyncOperations": "System Jobs",
+      "crm_timesheets_BulkDeleteFailures": "Bulk Delete Failures",
+      "crm_timesheets_DuplicateBaseRecord": "Duplicate Records (crm_timesheets_DuplicateBaseRecord)",
+      "crm_timesheets_DuplicateMatchingRecord": "Duplicate Records (crm_timesheets_DuplicateMatchingRecord)",
+      "crm_timesheets_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crm_timesheets_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crm_timesheets_ProcessSession": "Process Sessions",
+      "crm_timesheets_SyncErrors": "Sync Errors",
+      "crm_timesheetsid": "Timesheets",
+      "crm_total": "Total",
+      "crm_tue": "Tue",
+      "crm_User": "User",
+      "crm_wed": "Wed",
+      "crm_weekend": "WeekEnd",
+      "crm_weekstart": "WeekStart",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Timesheets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Timesheets (Views)",
+    "Name": "_crm_timesheets_views",
+    "RelatedEntityName": "Timesheets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5d574b04-433d-46bb-9810-57efa5d6322d": "Timesheets Lookup View",
+      "66d79ba1-a0de-43a7-a091-27055e42cb7f": "Active Timesheets",
+      "c0db34c5-6d1d-4a6d-96ff-8f56708c3785": "Timesheets Advanced Find View",
+      "d3979f16-3288-4870-9deb-1bf375704872": "Timesheets Associated View",
+      "d5ef3402-b655-479b-a0cc-ba921c8b9905": "Inactive Timesheets"
+    }
+  },
+  {
+    "DisplayName": "Status (Timesheets)",
+    "Name": "crm_timesheets_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Timesheets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Timesheets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Timesheets)",
+    "Name": "crm_timesheets_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Timesheets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Timesheets",
+    "Type": "OptionSetInfo"
+  }
+]

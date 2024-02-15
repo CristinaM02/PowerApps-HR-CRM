@@ -1,0 +1,149 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crm_leaverequests",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crm_leaverequest",
+    "MaxGetRowsCount": 500,
+    "Name": "LeaveRequests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crm_Approver": "Approver",
+      "crm_attachment": "Attachment",
+      "crm_description": "Description",
+      "crm_duration": "Duration",
+      "crm_enddate": "EndDate",
+      "crm_leave_type": "Leave_type",
+      "crm_leaverequest_AsyncOperations": "System Jobs",
+      "crm_leaverequest_BulkDeleteFailures": "Bulk Delete Failures",
+      "crm_leaverequest_DuplicateBaseRecord": "Duplicate Records (crm_leaverequest_DuplicateBaseRecord)",
+      "crm_leaverequest_DuplicateMatchingRecord": "Duplicate Records (crm_leaverequest_DuplicateMatchingRecord)",
+      "crm_leaverequest_FileAttachments": "FileAttachments",
+      "crm_leaverequest_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crm_leaverequest_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crm_leaverequest_ProcessSession": "Process Sessions",
+      "crm_leaverequest_SyncErrors": "Sync Errors",
+      "crm_leaverequestid": "LeaveRequest",
+      "crm_name": "ID",
+      "crm_requeststatuts": "RequestStatuts",
+      "crm_SpecialEventType": "SpecialEventType",
+      "crm_startdate": "StartDate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "LeaveRequests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "LeaveRequests (Views)",
+    "Name": "_crm_leaverequest_views",
+    "RelatedEntityName": "LeaveRequests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "240d8a9d-b558-4f3c-9851-34d6fa06bd49": "Inactive LeaveRequests",
+      "66f0dfac-9300-45f4-ba99-a18df6a43632": "LeaveRequest Associated View",
+      "7232f711-ac06-43a9-a291-88f1823285f2": "LeaveRequest Lookup View",
+      "8b129d6a-e36f-4783-9a49-4d6100878487": "LeaveRequest Advanced Find View",
+      "f47d72f1-845a-4f73-81ac-4358657c3785": "Active LeaveRequests"
+    }
+  },
+  {
+    "DisplayName": "Status (LeaveRequests)",
+    "Name": "crm_leaverequest_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "LeaveRequests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "LeaveRequests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (LeaveRequests)",
+    "Name": "crm_leaverequest_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "LeaveRequests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "LeaveRequests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "LeaveType",
+    "Name": "crm_leavetype",
+    "OptionSetInfoNameMapping": {
+      "770060000": "PTO",
+      "770060001": "Sick leave",
+      "770060002": "Special event"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crm_leave_type",
+        "OptionSetReferenceEntityName": "LeaveRequests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crm_leave_type",
+    "RelatedEntityName": "LeaveRequests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "RequestStatus",
+    "Name": "crm_requeststatus",
+    "OptionSetInfoNameMapping": {
+      "770060000": "In progress",
+      "770060001": "Approved",
+      "770060002": "Refused"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crm_requeststatuts",
+        "OptionSetReferenceEntityName": "LeaveRequests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crm_requeststatuts",
+    "RelatedEntityName": "LeaveRequests",
+    "Type": "OptionSetInfo"
+  }
+]

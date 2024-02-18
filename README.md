@@ -10,12 +10,18 @@ The screens available for them are:
 - A list where he can see all his leave requests and a screen to create a new one;
 - A calendar where he can log his hours onto the timesheet on the projects he is assigned.
 
+  [user.webm](https://github.com/CristinaM02/PowerApps-HR-CRM/assets/48758460/2bbe1dad-495d-40ae-a55b-84f573a46969)
+
+
 **HR** can manage projects and employees and view their timesheets. They can also view the leave requests and validate the ones where they are assigned as approvers.<br>
 The screens available for them are:
 - A dashboard with information like the number of projects, tasks, and employees and two charts: a pie chart with the hours worked on each project and a column chart with the number of leaves, both of them for a selected date;
 - A list of the leave requests he has to validate and all the requests created. They can open one to view the details and also approve/reject it;
 - A list of all the projects and the employees assigned to them;
 - A gallery of all the employees and the possibility to view, for each of them, their details and their timesheets.
+
+  [hr.webm](https://github.com/CristinaM02/PowerApps-HR-CRM/assets/48758460/9fcc8ccb-3134-4804-9051-5955dc7257cc)
+
 
   #### Other features
 - Some of the components (DetailsList, CommandBar, Pivot, Persona) are from the Creator Kit library.
